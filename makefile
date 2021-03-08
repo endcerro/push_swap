@@ -10,7 +10,9 @@ SRC 		= 	main.c
 CFLAGS		=	-Wall -Wextra -fsanitize=address #-march=native -pipe -O3 #-g3 -fsanitize=address #
 CC			=	clang
 
-all : $(NAME)
+all : $(NAME) #checker push_swap
+
+#checker : 
 
 $(NAME) 	: $(OBJD) $(OBJS)
 			$(CC) $(CFLAGS) -lpthread -pthread -I ./ -o $(NAME) $(OBJS) $(LIB)
