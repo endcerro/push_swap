@@ -5,7 +5,8 @@ INCLUDE 	=	head
 OBJ			=	$(SRC:.c=.o)
 OBJS		=	$(OBJ:%=$(OBJD)/%)
 
-SRC 		= 	main.c 
+SRC 		= 	main.c \
+				calls.c
 
 CFLAGS		=	-Wall -Wextra -fsanitize=address #-march=native -pipe -O3 #-g3 -fsanitize=address #
 CC			=	clang
