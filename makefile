@@ -1,12 +1,13 @@
-NAME 		=	a.out
+NAME 		=	checker
 DIRSRC 		=	src
 OBJD 		=	obj
 INCLUDE 	=	head
 OBJ			=	$(SRC:.c=.o)
 OBJS		=	$(OBJ:%=$(OBJD)/%)
 
-SRC 		= 	main.c \
-				calls.c
+SRC 		= 	main.c	\
+				calls.c	\
+				utils.c
 
 CFLAGS		=	-Wall -Wextra -fsanitize=address #-march=native -pipe -O3 #-g3 -fsanitize=address #
 CC			=	clang
