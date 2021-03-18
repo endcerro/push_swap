@@ -14,7 +14,6 @@ void init_stack(int argc, char **argv, t_stack *stack)
 	while (++i < argc - 1)
 		stack->stack[i] = atoi(argv[i + 1]);
 	stack->depth = argc - 2;
-	printf("DEPTH IS %d\n",stack->depth );
 }
 
 void printstack(t_stack *s)
@@ -22,46 +21,43 @@ void printstack(t_stack *s)
 	int i;
 
 	i = 0;
-	printf("-----------%d-----------------\n", s->depth);
+	printf("%d>>>>>>>>>>>\n", s->depth);
 	while(i <= s->depth)
 	{
 		printf("%d\n", s->stack[i]);
 		i++;
 	}
-	printf("-------------\n");
+	printf("<<<<<<<<<<<\n");
+}
+
+int checksort(t_stack *s)
+{
+	int i;
+	int c;
+
+	i = 0;
+	c = s->stack[0];
+	while (i <= s->depth)
+	{
+		if (c > s->stack[i])
+			return (printf("NOT SORTED\n"));
+		c = s->stack[i++];
+	}
+	printf("SORTED\n");
+	return (0);
 }
 
 int main(int argc, char **argv)
 {
 	t_stack a;
+	t_stack b;
 	init_stack(argc, argv, &a);
+	init_stack(argc, argv, &b);
 	printstack(&a);
 	
-	push(&a, 10);
-	printstack(&a);
-	// printf("top is %d\n",a.stack[0]);
-	// sa(&a);
-	// printstack(&a);
-	// printf("top is %d\n",a.stack[0]);
-	// pop(&a);
-	// printstack(&a);
-	// push(&a, pop(&a));
-	// printstack(&a);
-	// ra(&a);
-	// ra(&a);
-	// printstack(&a);
-	// rra(&a);
-	// printstack(&a);
-	// sa(&a);
-	// printstack(&a);
-	// printf("top is %d\n",a.stack[0]);
-	// printf("bottom is %d\n",a.stack[a.bottom]);
-	// ra(&a);
-	// printstack(&a);
-	// printf("bottom is %d\n",a.stack[a.bottom]);
-	// rra(&a);
-	// printstack(&a);
 
+	printstack(&a);
+	checksort(&a);
 	free(a.stack);
 	return 0;
 }

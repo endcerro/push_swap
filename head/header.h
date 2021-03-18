@@ -12,15 +12,17 @@ typedef struct 	s_stack
  	int m_size;
 }				t_stack;
 
-int sa(t_stack *a);					//OK
-int sb(t_stack *b);					//OK
-int ss(t_stack *a, t_stack *b);		//OK
-void ra(t_stack *a);				//OK
-void rb(t_stack *b);				//OK
-void rr(t_stack *a, t_stack *b);	//OK
+int sa(t_stack *a);					//OK SWAP F2
+int sb(t_stack *b);					//OK SWAP F2
+int ss(t_stack *a, t_stack *b);		//OK SWAP X2 F2 
+int pa(t_stack *a, t_stack *b);		//OK MV FB O A
+int pb(t_stack *a, t_stack *b);		//OK MV FA O B
+void ra(t_stack *a);				//OK UP ROTATE
+void rb(t_stack *b);				//OK UP ROTATE
+void rr(t_stack *a, t_stack *b);	//OK UP ROTATE X2
+void rra(t_stack *a);				//OK R ROTATE
+void rrb(t_stack *b);				//OK R ROTATE
 
-
-int pa(t_stack *a, t_stack *b);	//CHECK
 
 
 // sa : swap a - swap the first 2 elements at the top of stack a. 

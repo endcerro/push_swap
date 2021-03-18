@@ -81,53 +81,21 @@ void rr(t_stack *a, t_stack *b)
 
 void rra(t_stack *a)
 {
-	int tmp;
-
-	// tmp = a->stack[a->depth];
-	push(a, 10);
-	// printstack(a);
-	// a->depth--;
+	printf("RA\n");
+	push(a, a->stack[a->depth]);
+	a->depth--;
 }
 
-// void rra(t_stack *a)
-// {
-// 	int i;
-// 	int tmp[a->bottom + 2];
-// 	int bottom = a->bottom;
+void rrb(t_stack *b)
+{
+	printf("RB\n");
+	push(b, b->stack[b->depth]);
+	b->depth--;
+}
 
-// 	printf("RRA\n");
-// 	i = 0;
-// 	// tmp[0] = a->stack[bottom];
-	
-// 	// tmp[0] = 
-// 	while(i < a->bottom)
-// 	{
-// 		tmp[i + 1] = a->stack[i];
-// 		i++;
-// 	}
-// 	// tmp[bottom] = a->stack[0];
-// 	i = 0;
-// 	while(i < bottom)
-// 	{
-// 		a->stack[i] = tmp[i];
-// 		i++;
-// 	}
-// 	// a->stack[i] = tmp[i];
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void rrr(t_stack *a, t_stack *b)
+{
+	printf("RR\n");
+	rra(a);
+	rrb(b);
+}
