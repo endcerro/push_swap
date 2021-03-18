@@ -14,3 +14,9 @@ This project is about sorting two stacks using only the instruction set listed b
 - rrb : reverse rotate b - shift down all elements of stack b by 1. The last element becomes the first one.
 - rrr : rra and rrb at the same time.
 
+You're free to program whatever logic you want using C instructions 
+You can only interact with the stack using the instructions above
+ - You have to code a program that can verify if a stack is sorted after typings the instructions on STDIN
+ - You also need a solver that can sort a stack while displaying the called instructions
+
+The defense includes x max instructions for sorting stacks, probably for any stack
