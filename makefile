@@ -7,7 +7,8 @@ OBJS		=	$(OBJ:%=$(OBJD)/%)
 
 SRC 		= 	main.c	\
 				calls.c	\
-				utils.c
+				utils.c	\
+				gnl.c
 
 CFLAGS		=	-Wall -Wextra -fsanitize=address #-march=native -pipe -O3 #-g3 -fsanitize=address #
 CC			=	clang
