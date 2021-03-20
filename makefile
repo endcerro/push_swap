@@ -5,17 +5,22 @@ INCLUDE 	=	head
 OBJ			=	$(SRC:.c=.o)
 OBJS		=	$(OBJ:%=$(OBJD)/%)
 
-SRC 		= 	main.c	\
+#CHEKCER_M 	= checker.c
+
+SRC 		= 	checker.c \
 				calls.c	\
 				utils.c	\
 				gnl.c
 
-CFLAGS		=	-Wall -Wextra -fsanitize=address #-march=native -pipe -O3 #-g3 -fsanitize=address #
+CFLAGS		=	-Wall -Wextra -g3 -fsanitize=address #-march=native -pipe -O3 #-g3 -fsanitize=address #
 CC			=	clang
 
-all : $(NAME) #checker push_swap
+all : checker		#$(NAME) checker #checker push_swap
 
 #checker : 
+
+#checker : $(OBJD) $(OBJS)
+#			$(CC) $(CFLAGS) -lpthread -pthread -I ./ -o $(NAME) $(OBJS) $(LIB)
 
 $(NAME) 	: $(OBJD) $(OBJS)
 			$(CC) $(CFLAGS) -lpthread -pthread -I ./ -o $(NAME) $(OBJS) $(LIB)
